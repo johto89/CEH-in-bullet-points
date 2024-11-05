@@ -49,7 +49,7 @@
 2. **Patch management strategy**
    - Bugs on container/orchestration tools or OS images needs to be patched.
 3. **Network segmentation and firewalling**
-   - Design your network upfront providing netowkr level protection for
+   - Design your network upfront providing network level protection for
      - management interfaces from the orchestration too
      - network services from the host
    - Expose microservices to only legitimate consumers
@@ -70,7 +70,7 @@
 9. **Follow immutable paradigm**
    - Start containers on read-only mode if no file access is needed
 10. **Logging**
-    - Log on application, container image and orchestraction tool
+    - Log on application, container image and orchestration tool
     - Both related events and API level
     - Ensure logs are stored on remote with timestamps and are tamper proof
 
@@ -85,14 +85,14 @@
   - E.g. Windows Host Compute Service Shim library had [remote code execution](https://nvd.nist.gov/vuln/detail/CVE-2018-8115) vulnerability
   - E.g. [a bug](https://nvd.nist.gov/vuln/detail/CVE-2018-9862) allowed root privilige escalation using `docker` command
 - Creating malicious container on compromised host system
-  - E.g. [crypto-miner containers that were running near Russian nuclear warzone](ttps://www.fortinet.com/blog/threat-research/yet-another-crypto-mining-botnet)
+  - E.g. [crypto-miner containers that were running near Russian nuclear warzone](https://www.fortinet.com/blog/threat-research/yet-another-crypto-mining-botnet)
 - Exploiting orchestration tool
   - Can be e.g. Kubernetes, OpenShift, Cloud Foundry or other (cloud) layer running containers.
   - See [Kubernetes vulnerabilities on CVE](https://www.cvedetails.com/vulnerability-list/vendor_id-15867/product_id-34016/Kubernetes-Kubernetes.html)
 
 ## Container advantages over VM
 
-- **Often no SSHs enabled into containers**
+- **Often no SSH enabled into containers**
   - No SSH attacks
 - **Often no user access expected**
   - No need for credentials or tools to support users
@@ -103,7 +103,7 @@
 - **Immutable designs make it difficult to inject malware**
   - As persistance is usually separated away from the container
 - **Automatic generation makes it faster to pick up and promote security patches**
-  - Automated CI/CD pipelines make updaying libraries/OS much quicker than manual.
+  - Automated CI/CD pipelines make updating libraries/OS much quicker than manual
 - **Well-defined APIs enables easier anomaly detection**
   - Developers often create APIs to communicate with containers
   - Makes it easy to create a reference model for what is normal inside an application, so anything outside of that is an anomaly. We can automatically detect any anomalies
@@ -117,7 +117,7 @@
   - Limit capabilities (Grant only specific capabilities, needed by a container)¶
   - Add –no-new-privileges flag
   - Disable inter-container communication (--icc=false)
-  - Use Linux Security Module (seccomp, AppArmor, or SELinux)¶
+  - Use Linux Security Module (seccomp, AppArmor, or SELinux)
   - Limit resources (memory, CPU, file descriptors, processes, restarts)
   - Set filesystem and volumes to read-only
   - Use static analysis tools

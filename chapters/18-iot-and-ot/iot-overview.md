@@ -1,4 +1,4 @@
-# IoT hacking
+# IoT overview
 
 ## IoT basics
 
@@ -61,57 +61,36 @@
 - Access are granted to the uploaded data to third-parties
 - E.g. [Map My Fitness](https://www.mapmyfitness.com/app) that compiles data from other applications
 
-## Five layer IoT architecture
+## Layered architecture
 
+- IoT architecture can be categorized into different layers.
+- There's no consistency regarding naming of layer.
+  - Different methodologies are used but the concepts they represent are very similar.
+- 📝 It usually consists of 5 layers:
+  1. [Edge technology layer](#edge-technology-layer) the "IoT objects collecting data"
+  2. [Access gateway layer](#access-gateway-layer) the "data transporter"
+  3. [Internet layer](#internet-layer) the "endpoint connector"
+  4. [Middleware layer](#middleware-layer) the "data analyzer and processor"
+  5. [Application layer](#application-layer) the "user interface"
+- Some sources also name sixth layer:
+  6. [Business layer](#business-layer) the "core logic"
 - Each layer is utilized by layer below without knowledge of other layers
 - ![IoT 5 Layered Architecture](./img/iot-5-layer-architecture.png)
 - Read more: [IoT Elements, Layered Architectures and Security Issues: A Comprehensive Survey](https://www.mdpi.com/1424-8220/18/9/2796/htm)
 
-### Business layer
+### Five-layers of IoT architecture
 
-- Includes business models
-- System management
-- **Key security components**: privacy protection
-- **Vulnerabilities**
-  - Business logic attack: exploits a programming flaw
-  - Zero-day attack: exploits security hole unknown to the vendor
+#### Edge technology layer
 
-### Application layer
-
-- Graphic data representation
-- Application specific services
-- **Key security components**: authentication, key agreement
-- **Vulnerabilities**
-  - Cross site scripting: injecting code through e.g. JavaScript
-  - Malicious code attack: can activate itself or require user attention to perform an action.
-  - Dealing with Mass Data
-    - Caused by massive amount of data transmission
-    - Can lead to data loss and network disturbance
-
-### Processing (middleware) layer
-
-- Data analytics: storing, processing and analysis of data
-- **Key security components**: key security layer, secure cloud computing, antivirus
-- **Vulnerabilities**
-  - Exhaustion: Can disturb memory, battery e.g. after effect of a DoS
-  - Malwares
-
-### Network (transport) layer
-
-- Data transmission: Transfer the data through network
-- E.g. Wi-Fi, bluetooth
-- **Key security components**: encryption, identity authentication
-- **Vulnerabilities**
-  - Denial of Service (DoS) Attack with redundant requests
-  - Main-in-The-Middle (MiTM) Attack: to intercept and manipulate data in real-time
-  - Storage Attack: Changing data stored in device or cloud
-  - Exploit attack: Exploits vulnerabilities in an application, system or hardware
-
-### Perception layer
-
-- Physical objects that gather environment data
-- Sensors, actuators e.g. heat sensor
-- **Key security components**: encryption and key agreement, sensor data protection
+- Also known as **perception layer** or **hardware layer**
+- Physical objects (hardware components)
+  - Covers IoT capable devices
+  - E.g. sensors, actuators, heat sensor, RFID tags, readers, device itself
+- Connects devices within network and server
+- Gathers environment data
+- **Key security components**
+  - Encryption and key agreement
+  - Sensor data protection
 - **Vulnerabilities**
   - Eavesdropping: real time attack to intercept privacy communications.
   - Node Capture: capturing a key node such as gateway to reveal information.
@@ -119,23 +98,92 @@
   - Replay (play back) attack: eavesdrops a communication and reusing it to authenticate.
   - Timing Attack: Extract secrets by observing respond time
 
+#### Access gateway layer
+
+- Also known as **network layer** or **transport layer**
+- Handles data transmission i.e. transferring the data through network
+- E.g. Wi-Fi, bluetooth
+- Enables communication
+  - Connects two endpoints e.g. a clients with a device.
+  - Includes the initial data handling.
+  - Through e.g. message routing, message identification, and subscriptions.
+- **Key security components**
+  - Encryption
+  - Identity authentication
+- **Vulnerabilities**
+  - Denial of Service (DoS) Attack with redundant requests
+  - Main-in-The-Middle (MiTM) Attack: to intercept and manipulate data in real-time
+  - Storage Attack: Changing data stored in device or cloud
+  - Exploit attack: Exploits vulnerabilities in an application, system or hardware
+
+#### Internet layer
+
+- Responsible for end-points connectivity.
+- Carries out communication between two endpoints.
+  - E.g. device-to-device, device-to-cloud, device-to-gateway and back-end data-sharing.
+
+#### Middleware layer
+
+- Also known as **processing layer**
+- Responsible for device and information management.
+- Handles data analytics
+  - I.e. storing, processing and analysis of data.
+  - E.g. data analysis, data aggregation, data filtering, device information discovery, and access control.
+- Behaves as interface for two-way communication between
+  - [Application layer](#application-layer) (the user interface).
+  - [Edge technology layer](#edge-technology-layer) (the hardware).
+- **Key security components**
+  - Key security layer, secure cloud computing, antivirus
+- **Vulnerabilities**
+  - Exhaustion: Can disturb memory, battery e.g. after effect of a DoS
+  - Malware
+
+#### Application layer
+
+- The user interface for
+  - Graphic data representation
+  - Controlling, managing and commanding IoT devices.
+- Responsible for delivering *service* and *data* to users.
+  - A service is application-specific e.g. industrial, manufacturing, automobile, security, healthcare...
+- **Key security components**
+  - Authentication
+  - Key agreement
+- **Vulnerabilities**
+  - Cross site scripting: injecting code through e.g. JavaScript
+  - Malicious code attack: can activate itself or require user attention to perform an action.
+  - Dealing with Mass Data
+    - Caused by massive amount of data transmission
+    - Can lead to data loss and network disturbance
+
+### Other IoT layers
+
+#### Business layer
+
+- Includes business models
+- System management
+- **Key security components**
+  - Privacy protection
+- **Vulnerabilities**
+  - Business logic attack: exploits a programming flaw
+  - Zero-day attack: exploits security hole unknown to the vendor
+
 ## IoT connectivity
 
 ### Wireless IoT connectivity
 
 | Approx. range up to | Connectivity | Speed |
 |:-------------------:| ------------ | ----- |
-| 10 cm | NFC | 424 Kbit/s |
+| 10 cm | NFC | 424 kbit/s |
 | 1 m | RFID | 300 tags per second |
-| 10 m | Li-Fi | 100 Gbit/s |
-| 60 m | Bluetooth low energi (BLE) | 1 or 2 Mbit/s |
-| 100 m | WiFi | 1300 Mbit/s |
-| 1 km | Wi-Fi HaLow | 78 Mbit/s |
-| 2 km | 5G | 20 Gbit/s |
-| 30 km | LTE-Advanced | 300 Mbit/s |
+| 10 m | Li-Fi | 100 gbit/s |
+| 60 m | Bluetooth low energi (BLE) | 1 or 2 mbit/s |
+| 100 m | WiFi | 1300 mbit/s |
+| 1 km | Wi-Fi HaLow | 78 mbit/s |
+| 2 km | 5G | 20 gbit/s |
+| 30 km | LTE-Advanced | 300 mbit/s |
 | 70 km | Celullar | - (depends on 4g etc.) |
-| 1000 km | LPWAN | 200 Kbit/s |
-| World-wide | VSAT | 16 Mbit/s |
+| 1000 km | LPWAN | 200 kbit/s |
+| World-wide | VSAT | 16 mbit/s |
 
 #### Short-range wireless communication
 
@@ -160,7 +208,7 @@
 
 - **LTE-Advanced**: Formally submitted as a candidate 4G, often being described as 3.9G.
 - **Wi-Fi HaLow**: low power, long-range, also known as "WiFi for Internet of Things"
-- **5G**: Introduced in 2019, highest with minimum of 10 GBPS
+- **5G**: Introduced in 2019, highest with minimum of 10 Gbps
 
 #### Long Range Wireless Communication
 

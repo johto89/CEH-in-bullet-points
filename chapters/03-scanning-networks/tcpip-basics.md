@@ -71,7 +71,7 @@
 - Used to indicate a particular connection state or provide additional information
 - Size of each flag is 1 bit being either `0` or `1`
 - 📝 Flag types
-  - **Sequence number (`SYN`)**
+  - **Synchronization (`SYN`)**
     - Also known as **synchronization** flag.
     - Synchronize sequence numbers
     - First step of connection establishment (3-way handshake)
@@ -88,7 +88,9 @@
   - **Reset (`RST`)**
     - `1` aborts the connection in response
     - Sent from the receiver to the sender when a packet is sent to a particular host that was not expecting it.
-    - Also used to determine [whether a port is open](./scanning-techniques.md#rfc-793-scans)
+    - Also used as
+      - DDoS attack, see [`RST` attack](./../13-web-applications/denial-of-service.md#rst-attack)
+      - Scanning technique, see [RFC 793 scans](./scanning-techniques.md#rfc-793-scans)
 
 ### Finish (`FIN`) vs Reset (`RST`)
 
@@ -119,7 +121,7 @@
 
 ## OSI model
 
-- Conceptual model that characterises and standardises the communication functions
+- Conceptual model that characterizes and standardizes the communication functions
 - 📝 Uses seven abstraction layers:
   1. **Physical** (bits)
      - Media, signal & binary transmission
@@ -142,7 +144,7 @@
      - E.g. • [SSL/TLS](./../15-cryptography/encrypting-communication.md#ssltls) (not entirely) • [SSH](./../15-cryptography/tunneling-protocols.md#ssh-secure-shell)  • IMAP • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • MPEG • JPEG
   7. **Application** (data)
      - End User Layer: network process to application
-     - E.g. • HTTP • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • IRC • [SSH](./../15-cryptography/tunneling-protocols.md#ssh-secure-shell) • [DNS](./../04-enumaration/dns-enumeration.md#dns) • [SMTP](./../04-enumaration/enumeration-overview.md#smtp)
+     - E.g. • HTTP • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • IRC • [SSH](./../15-cryptography/tunneling-protocols.md#ssh-secure-shell) • [DNS](./../04-enumeration/dns-enumeration.md#dns) • [SMTP](./../04-enumeration/enumeration-overview.md#smtp)
 - See also • [Firewall types per OSI Layer | Firewall](./../11-firewalls-ids-and-honeypots/firewall-overview.md#firewall-types-per-osi-layer) • [Vulnerability stack | Hacking web applications](./../13-web-applications/hacking-web-applications.md#vulnerability-stack) • [Encryption types per OSI layer | Encryption algorithms](./../15-cryptography/encryption-algorithms.md#encryption-types-per-osi-layer)
 
 ## TCP/IP model
@@ -151,7 +153,7 @@
   1. **Link layer**: • [ARP](./../08-sniffing/arp-poisoning.md#arp) • [PPP](./../15-cryptography/tunneling-protocols.md#ppp-point-to-point-protocol) • [MAC](./../08-sniffing/sniffing-attacks-overview.md#mac)
   2. **Internet layer**: • TCP • UDP • DCCP • SCTP ...
   3. **Transport layer**: • IP • ICMP • ECN • [IPSec](./../15-cryptography/tunneling-protocols.md#ipsec) ...
-  4. **Application layer**: • [DNS](./../04-enumaration/dns-enumeration.md#dns) • HTTP • HTTPS • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • [SSH](./../15-cryptography/tunneling-protocols.md#ssh-secure-shell)) • SMTP ...
+  4. **Application layer**: • [DNS](./../04-enumeration/dns-enumeration.md#dns) • HTTP • HTTPS • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • [SSH](./../15-cryptography/tunneling-protocols.md#ssh-secure-shell)) • SMTP ...
 - ❗ OSI model does not match well TCP/IP
   - [RFC 3439](https://tools.ietf.org/html/rfc3439) considers layering "harmful"
 - ❗ E.g. SSL/TLS does not fit in any of OSI or TCP/IP layers
@@ -160,9 +162,9 @@
 
 ## TCP/IP vs OSI model
 
-| TCP/IP | Procotols and services | OSI model |
+| TCP/IP | Protocols and services | OSI model |
 | ------ |:----------------------:| --------- |
-| Application | • HTTP • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • Telnet • [NTP](./../04-enumaration/enumeration-overview.md#ntp) • DHCP • PING | • Application • Presentation • Session |
+| Application | • HTTP • [FTP](./../15-cryptography/encrypting-communication.md#ftp-file-transfer-protocol) • Telnet • [NTP](./../04-enumeration/enumeration-overview.md#ntp) • DHCP • PING | • Application • Presentation • Session |
 | Transport | • TCP • UDP | Transport |
 | Network | • IP • [ARP](./../08-sniffing/arp-poisoning.md#arp) • [ICMP](./scanning-techniques.md#scanning-icmp) • IGMP | Network |
 | Network interface | • Ethernet • PPTP | • Data Link • Physical |

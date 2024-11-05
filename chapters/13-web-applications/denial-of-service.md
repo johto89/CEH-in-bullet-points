@@ -101,7 +101,7 @@
 
 - Overloading a server with TCP ACK packets
 - TCP ACK packet is any TCP packet with the ACK flag set in the header.
-- ACK is short for "acknowledgement."
+- ACK is short for "acknowledgement"
   - TCP protocol requires that connected devices acknowledge they have received all packets in order
   - E.g. when all packets for an image is sent, ACK packet is required otherwise image is sent again.
 
@@ -124,15 +124,20 @@
   - Windows 3.1x, Windows 95 and Windows NT
   - Linux prior to versions 2.0.32 and 2.1.63
 
-##### RST attack
+##### `RST` attack
 
 - Also known as **TCP reset attack**
 - Attacker sends TCP packets with the `RST` flag set to `1` to host A, host B, or both using spoofed IPs
   - Causes termination of valid TCP connection between the two hosts.
 - Setting `RST` flag
-  - Indicates that receiving computer should immediately kills the TCP connection
-  - If computer A does not know that B has killed the communication (e.g. if computer B has crashed), it still sends the packets.
-    - Computer B in that case can send `RST` packet to computer B.
+  - Indicates that receiving computer should immediately kill the TCP connection
+  - An real-life scenario
+    1. Two computers (computer A and computer B) communicate with each other
+    2. Computer B kills the communication without knowledge of computer A
+       - E.g. computer B has crashed
+    3. Computer A continues to send packets to computer B
+    4. Computer B sends `RST` packet to computer A to kill the communication
+  - See also: [TCP flags](./../03-scanning-networks/tcpip-basics.md#tcp-flags)
 - 🤗 Used often for internet censorship e.g. • [The Great Firewall of China](https://en.wikipedia.org/wiki/Great_Firewall) • [Iranian Internet censors](https://en.wikipedia.org/wiki/Internet_censorship_in_Iran#Deep_packet_inspection).
 
 ### Application layer DoS attacks
@@ -186,7 +191,7 @@
 
 - **Slowloris**
   - Floods HTTP with headers for each request without actually completing them.
-  - 🤗 [Slowlaris presentation](https://samsclass.info/seminars/slowloris.pdf)
+  - 🤗 [Slowloris presentation](https://samsclass.info/seminars/slowloris.pdf)
 - 📝 **[R-U-Dead-Yet](https://sourceforge.net/projects/r-u-dead-yet/)**
   - Also known as ***RUDY***, ***R.U.D.Y.*** or ***R U Dead yet***
   - Submits long form fields using HTTP posts to the target server.
@@ -222,9 +227,9 @@
 
 - **Activity Profiling**: Detect Increases in activity levels, distinct clusters, average packet rate etc.
 - **Changepoint detection**: Stores and presents graph of traffic flow rate vs time for each IP/port.
-- **Wavelet-based signal analysis**: Devides incoming signal into various frequences as spectral components.
+- **Wavelet-based signal analysis**: Divides incoming signal into various frequencies as spectral components.
 
-### DoS prevention Strategies
+### DoS prevention strategies
 
 - Absorb the attack with additional resources e.g. through using a CDN.
 - Degrade or shut down services (start with non-critical services)

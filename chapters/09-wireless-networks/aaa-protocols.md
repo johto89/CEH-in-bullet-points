@@ -6,13 +6,13 @@
   - [Point-to-Point Protocol (PPP)](./../15-cryptography/tunneling-protocols.md#ppp-point-to-point-protocol)
   - [Extensible Authentication Protocol (EAP)](#extensible-authentication-protocol-eap)
   - Protected Extensible Authentication Protocol (PEAP)
-  - [Lightweight Directory Access Protocol (LDAP)](./../04-enumaration/enumeration-overview.md#ldap)
+  - [Lightweight Directory Access Protocol (LDAP)](./../04-enumeration/enumeration-overview.md#ldap)
 - Most commonly used protocol is [RADIUS](#radius) and then [Diameter](#diameter), meanwhile older systems use [TACACS](#tacacs) and [TACACS+](#tacacs-tacacs-plus)
 
 ## RADIUS
 
 - Stands for **R**emote **A**uthentication **D**ial **I**n **U**ser **S**ervice
-- 📝 Commonly used by IPSs (Internet Service Providers) and corporations for access control
+- 📝 Commonly used by ISPs (Internet Service Providers) and corporations for access control
 - Primarily used to manage access to the internet or other networks
   - Networks can employ a variety of networking technologies, including analog modems, DSL, wireless local area networks (WLANs), and VPNs.
 - Based on UDP (User Datagram Protocol)

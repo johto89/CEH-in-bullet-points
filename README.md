@@ -49,7 +49,7 @@
 2. Footprinting
    1. [Footprinting overview](./chapters/02-footprinting/footprinting-overview.md)
    2. [Search engines and online resources](./chapters/02-footprinting/search-engines-and-online-resources.md)
-   3. [WHOIS, GeoIpLocation and DNS interrogation](./chapters/02-footprinting/whois-geoiplocation-and-dns-interogation.md)
+   3. [WHOIS, GeoIpLocation and DNS interrogation](./chapters/02-footprinting/whois-geoiplocation-and-dns-interrogation.md)
    4. [Email footprinting](./chapters/02-footprinting/email-footprinting.md)
    5. [Website footprinting](./chapters/02-footprinting/website-footprinting.md)
    6. [Network footprinting](./chapters/02-footprinting/network-footprinting.md)
@@ -61,8 +61,8 @@
    5. [Bypassing IDS and firewall](./chapters/03-scanning-networks/bypassing-ids-and-firewall.md)
    6. [Banner grabbing](./chapters/03-scanning-networks/banner-grabbing.md)
 4. Enumeration
-   1. [Enumeration Overview](./chapters/04-enumaration/enumeration-overview.md)
-   2. [DNS enumeration](./chapters/04-enumaration/dns-enumeration.md)
+   1. [Enumeration Overview](./chapters/04-enumeration/enumeration-overview.md)
+   2. [DNS enumeration](./chapters/04-enumeration/dns-enumeration.md)
 5. Vulnerabilities
    1. [Vulnerability analysis](./chapters/05-vulnerabilities/vulnerability-analysis.md)
    2. [Common vulnerabilities](./chapters/05-vulnerabilities/common-vulnerabilities.md)
@@ -135,7 +135,7 @@
     2. [Mobile attack vectors](./chapters/17-mobile-platforms/mobile-attack-vectors.md)
     3. [Mobile attacks](./chapters/17-mobile-platforms/mobile-attacks.md)
 18. IoT and OT
-    1. [IoT hacking](./chapters/18-iot-and-ot/iot-hacking.md)
+    1. [IoT overview](./chapters/18-iot-and-ot/iot-overview.md)
     2. [IoT security](./chapters/18-iot-and-ot/iot-security.md)
 19. [Exam readiness](chapters/19-exam-readiness/exam-readiness.md)
 
